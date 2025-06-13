@@ -11,6 +11,12 @@ const HeroSection = () => {
     }
   };
 
+  const openDirections = () => {
+    const address = "Barrie's Asparagus, 1236 Kings Rd, Cambridge, ON N1R 5S3";
+    const encodedAddress = encodeURIComponent(address);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -54,7 +60,7 @@ const HeroSection = () => {
               className="bg-farm-green-600 hover:bg-farm-green-700 text-white px-8 py-3 text-lg font-medium group"
               onClick={() => scrollToSection('produce')}
             >
-              Shop Our Produce
+              View Our Produce
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
@@ -62,7 +68,7 @@ const HeroSection = () => {
               variant="outline" 
               size="lg" 
               className="border-farm-brown-400 text-farm-brown-700 hover:bg-farm-brown-50 px-8 py-3 text-lg font-medium group"
-              onClick={() => scrollToSection('visit')}
+              onClick={openDirections}
             >
               <MapPin className="mr-2 h-5 w-5" />
               Visit Our Farm

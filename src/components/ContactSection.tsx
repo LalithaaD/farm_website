@@ -96,8 +96,9 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Address</h4>
-                      <p className="text-farm-brown-600">123 Country Road</p>
-                      <p className="text-farm-brown-600">Farmville, ON K1A 0A1</p>
+                      <p className="text-farm-brown-600">Barrie's Asparagus</p>
+                      <p className="text-farm-brown-600">1236 Kings Rd</p>
+                      <p className="text-farm-brown-600">Cambridge, ON N1R 5S3</p>
                       <p className="text-sm text-farm-brown-500">15 minutes from downtown</p>
                     </div>
                   </div>
