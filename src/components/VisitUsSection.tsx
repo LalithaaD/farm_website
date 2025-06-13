@@ -4,6 +4,13 @@ import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const VisitUsSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const reviews = [
     {
       name: "Sarah M.",
@@ -88,8 +95,8 @@ const VisitUsSection = () => {
                   <div>
                     <h4 className="font-semibold text-farm-green-600 mb-2">Country Market</h4>
                     <div className="text-sm text-farm-brown-700 space-y-1">
-                      <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
-                      <p>Sunday: 9:00 AM - 5:00 PM</p>
+                      <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                      <p>Sunday: 10:00 AM - 5:00 PM</p>
                       <p className="text-xs text-farm-brown-500">Open year-round</p>
                     </div>
                   </div>
@@ -123,21 +130,25 @@ const VisitUsSection = () => {
                   Payment Options
                 </h3>
                 
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="text-center p-3 bg-farm-green-50 rounded-lg">
-                    <CreditCard className="h-6 w-6 mx-auto mb-2 text-farm-green-600" />
-                    <p className="text-sm font-medium">Cards Accepted</p>
-                  </div>
+                <div className="grid grid-cols-3 gap-4 mb-4">
                   <div className="text-center p-3 bg-farm-green-50 rounded-lg">
                     <span className="text-2xl mb-2 block">💵</span>
-                    <p className="text-sm font-medium">Cash Welcome</p>
+                    <p className="text-sm font-medium">Cash</p>
+                  </div>
+                  <div className="text-center p-3 bg-farm-green-50 rounded-lg">
+                    <span className="text-2xl mb-2 block">📝</span>
+                    <p className="text-sm font-medium">Cheque</p>
+                  </div>
+                  <div className="text-center p-3 bg-farm-green-50 rounded-lg">
+                    <span className="text-2xl mb-2 block">📧</span>
+                    <p className="text-sm font-medium">E-Transfer</p>
                   </div>
                 </div>
                 
                 <div className="text-sm text-farm-brown-600 space-y-1">
-                  <p>• Visa, Mastercard, Debit accepted</p>
-                  <p>• Local checks welcome with ID</p>
-                  <p>• 5% discount for cash payments over $50</p>
+                  <p>• Cash payments welcome</p>
+                  <p>• Local cheques accepted with ID</p>
+                  <p>• E-transfer to aspagarus@rogers.com</p>
                   <p>• Seasonal CSA memberships available</p>
                 </div>
               </div>
@@ -167,11 +178,48 @@ const VisitUsSection = () => {
                 
                 <div className="mt-4 text-center">
                   <p className="text-sm text-farm-brown-600 mb-2">Average Rating: 4.9/5 (127 reviews)</p>
-                  <Button variant="outline" size="sm" className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50"
+                    onClick={scrollToContact}
+                  >
                     Read All Reviews
                   </Button>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Quick contact cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center">
+              <h4 className="font-semibold text-farm-brown-800 mb-2">🥬 Wholesale Orders</h4>
+              <p className="text-sm text-farm-brown-600 mb-4">
+                Restaurants & markets - bulk pricing available
+              </p>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50"
+                onClick={scrollToContact}
+              >
+                Learn More
+              </Button>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center">
+              <h4 className="font-semibold text-farm-brown-800 mb-2">👥 Group Tours</h4>
+              <p className="text-sm text-farm-brown-600 mb-4">
+                Schools & organizations - educational experiences
+              </p>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50"
+                onClick={scrollToContact}
+              >
+                Book Tour
+              </Button>
             </div>
           </div>
         </div>

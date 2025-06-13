@@ -14,6 +14,7 @@ const ContactSection = () => {
     subject: '',
     message: ''
   });
+  const [newsletterEmail, setNewsletterEmail] = useState('');
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -29,6 +30,18 @@ const ContactSection = () => {
       description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail) {
+      console.log('Newsletter signup:', newsletterEmail);
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for subscribing to our farm newsletter.",
+      });
+      setNewsletterEmail('');
+    }
   };
 
   return (
@@ -61,8 +74,8 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Phone</h4>
-                      <p className="text-farm-brown-600">(555) 123-4567</p>
-                      <p className="text-sm text-farm-brown-500">Monday - Saturday 8AM-6PM</p>
+                      <p className="text-farm-brown-600">519 621 9409</p>
+                      <p className="text-sm text-farm-brown-500">Monday - Saturday 9AM-6PM</p>
                     </div>
                   </div>
 
@@ -72,7 +85,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Email</h4>
-                      <p className="text-farm-brown-600">info@barriesfarm.ca</p>
+                      <p className="text-farm-brown-600">aspagarus@rogers.com</p>
                       <p className="text-sm text-farm-brown-500">We respond within 24 hours</p>
                     </div>
                   </div>
@@ -99,16 +112,19 @@ const ContactSection = () => {
                 <p className="text-farm-brown-600 mb-4">
                   Get weekly updates on what's fresh, seasonal recipes, and farm events!
                 </p>
-                <div className="flex gap-2">
+                <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                   <Input 
                     type="email" 
                     placeholder="Your email address"
                     className="flex-1"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
                   />
-                  <Button className="bg-farm-green-600 hover:bg-farm-green-700">
+                  <Button type="submit" className="bg-farm-green-600 hover:bg-farm-green-700">
                     Subscribe
                   </Button>
-                </div>
+                </form>
                 <p className="text-xs text-farm-brown-500 mt-2">
                   No spam, unsubscribe anytime. Sent weekly during growing season.
                 </p>
@@ -189,7 +205,7 @@ const ContactSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(555) 123-4567"
+                      placeholder="(519) 621-9409"
                       className="w-full"
                     />
                   </div>

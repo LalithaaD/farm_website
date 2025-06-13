@@ -56,11 +56,11 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2 text-farm-green-400" />
-                  <span className="text-farm-cream-200">(555) 123-4567</span>
+                  <span className="text-farm-cream-200">519 621 9409</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-farm-green-400" />
-                  <span className="text-farm-cream-200">info@barriesfarm.ca</span>
+                  <span className="text-farm-cream-200">aspagarus@rogers.com</span>
                 </div>
               </div>
             </div>
@@ -73,8 +73,8 @@ const Footer = () => {
                   <Clock className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
                   <div className="text-farm-cream-200">
                     <p className="font-medium">Country Market</p>
-                    <p>Mon-Sat: 8AM-6PM</p>
-                    <p>Sun: 9AM-5PM</p>
+                    <p>Mon-Sat: 9AM-6PM</p>
+                    <p>Sun: 10AM-5PM</p>
                   </div>
                 </div>
                 <div className="text-farm-cream-200">

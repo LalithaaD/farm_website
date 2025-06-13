@@ -4,6 +4,13 @@ import { ShoppingBag, Coffee, Cookie, Droplets } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FarmStoreSection = () => {
+  const handleShopSeasonalClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const products = [
     {
       category: 'Preserves & Jams',
@@ -72,7 +79,11 @@ const FarmStoreSection = () => {
             <p className="text-lg mb-4">
               Try our limited-edition Pumpkin Spice preserve and Apple Cinnamon coffee blend!
             </p>
-            <Button variant="secondary" className="bg-white text-farm-green-700 hover:bg-farm-cream-100">
+            <Button 
+              variant="secondary" 
+              className="bg-white text-farm-green-700 hover:bg-farm-cream-100"
+              onClick={handleShopSeasonalClick}
+            >
               Shop Seasonal Items
             </Button>
           </div>

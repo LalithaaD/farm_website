@@ -4,10 +4,23 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, MapPin } from 'lucide-react';
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-farm-green-100 via-farm-cream-100 to-farm-green-50"></div>
+      
+      {/* Farm photo background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: 'url(/lovable-uploads/f3d4a98a-038e-45db-9c7a-e553af03d029.png)' }}
+      ></div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-farm-green-200/30 rounded-full blur-xl"></div>
@@ -39,6 +52,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-farm-green-600 hover:bg-farm-green-700 text-white px-8 py-3 text-lg font-medium group"
+              onClick={() => scrollToSection('produce')}
             >
               Shop Our Produce
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -48,6 +62,7 @@ const HeroSection = () => {
               variant="outline" 
               size="lg" 
               className="border-farm-brown-400 text-farm-brown-700 hover:bg-farm-brown-50 px-8 py-3 text-lg font-medium group"
+              onClick={() => scrollToSection('visit')}
             >
               <MapPin className="mr-2 h-5 w-5" />
               Visit Our Farm
