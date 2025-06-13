@@ -12,7 +12,7 @@ const VisitUsSection = () => {
   };
 
   const openGoogleMaps = () => {
-    const address = "123 Country Road, Farmville, ON K1A 0A1";
+    const address = "Barrie's Asparagus, 1236 Kings Rd, Cambridge, ON N1R 5S3";
     const encodedAddress = encodeURIComponent(address);
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
@@ -67,7 +67,7 @@ const VisitUsSection = () => {
                   <div className="text-center text-farm-brown-600">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
                     <p className="text-lg font-medium">Interactive Map</p>
-                    <p className="text-sm">123 Country Road, Farmville, ON</p>
+                    <p className="text-sm">1236 Kings Rd, Cambridge, ON</p>
                   </div>
                 </div>
                 
@@ -158,7 +158,6 @@ const VisitUsSection = () => {
                   <p>• Cash payments welcome</p>
                   <p>• Local cheques accepted with ID</p>
                   <p>• E-transfer to aspagarus@rogers.com</p>
-                  <p>• <strong>Seasonal CSA memberships available</strong> - Community Supported Agriculture program where members receive weekly boxes of fresh seasonal produce throughout the growing season</p>
                 </div>
               </div>
 

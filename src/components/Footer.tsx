@@ -63,8 +63,9 @@ const Footer = () => {
                 <div className="flex items-start">
                   <MapPin className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
                   <div className="text-farm-cream-200">
-                    <p>123 Country Road</p>
-                    <p>Farmville, ON K1A 0A1</p>
+                    <p>Barrie's Asparagus</p>
+                    <p>1236 Kings Rd</p>
+                    <p>Cambridge, ON N1R 5S3</p>
                   </div>
                 </div>
                 <div className="flex items-center">

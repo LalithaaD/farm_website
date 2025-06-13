@@ -20,8 +20,19 @@ const OurStorySection = () => {
 
           {/* Story content */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Family photo */}
+            <div className="order-2 lg:order-1 space-y-4">
+              <div 
+                className="bg-cover bg-center rounded-lg h-96 shadow-lg"
+                style={{ backgroundImage: 'url(/lovable-uploads/7f4f1f48-2f91-4155-8063-2adf7e9bc60d.png)' }}
+              ></div>
+              <p className="text-center text-farm-brown-600 italic">
+                Tim Barrie, David Barrie and William Barrie posed for a photo at Barrie's Asparagus Farm & Country Market
+              </p>
+            </div>
+
             {/* Story text */}
-            <div className="space-y-6">
+            <div className="order-1 lg:order-2 space-y-6">
               <div className="prose prose-lg">
                 <p className="text-farm-brown-700 leading-relaxed">
                   It all started in 1948 when Grandpa Barrie planted his first asparagus crowns 
@@ -43,17 +54,6 @@ const OurStorySection = () => {
                   our family for over 75 years.
                 </p>
               </div>
-            </div>
-
-            {/* Family photo */}
-            <div className="space-y-4">
-              <div 
-                className="bg-cover bg-center rounded-lg h-96 shadow-lg"
-                style={{ backgroundImage: 'url(/lovable-uploads/7f4f1f48-2f91-4155-8063-2adf7e9bc60d.png)' }}
-              ></div>
-              <p className="text-center text-farm-brown-600 italic">
-                Tim Barrie, David Barrie and William Barrie posed for a photo at Barrie's Asparagus Farm & Country Market
-              </p>
             </div>
           </div>
 

@@ -32,7 +32,7 @@ const Navigation = () => {
           </div>
           <div className="flex items-center space-x-1">
             <MapPin className="h-3 w-3" />
-            <span>Open Daily 8am-6pm | Fresh Asparagus Season: April-June</span>
+            <span>Open Daily 8am-6pm | Fresh Asparagus Season: April-June | Price Range · $$</span>
           </div>
         </div>
       </div>
