@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,53 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Farm-specific colors
+				'farm-green': {
+					50: '#f0f9f4',
+					100: '#dcf2e4',
+					200: '#bae5cb',
+					300: '#88d3a8',
+					400: '#4fb87e',
+					500: '#2e7d32',
+					600: '#22682a',
+					700: '#1e5622',
+					800: '#1a461d',
+					900: '#163a19'
+				},
+				'farm-brown': {
+					50: '#faf7f2',
+					100: '#f2ebe0',
+					200: '#e6d4c1',
+					300: '#d5b896',
+					400: '#c19968',
+					500: '#a67c52',
+					600: '#8b6240',
+					700: '#6f4e35',
+					800: '#5a402d',
+					900: '#4a3526'
+				},
+				'farm-cream': {
+					50: '#fefdfb',
+					100: '#fdfaf5',
+					200: '#fbf4e8',
+					300: '#f7ebd5',
+					400: '#f1ddb8',
+					500: '#e8cb95',
+					600: '#dab26f',
+					700: '#c8954c',
+					800: '#a67a3e',
+					900: '#886435'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'serif': ['Merriweather', 'serif'],
+				'sans': ['Open Sans', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +126,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out'
 			}
 		}
 	},
