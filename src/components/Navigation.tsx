@@ -23,11 +23,11 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone className="h-3 w-3" />
-              <span>(555) 123-4567</span>
+              <span>519 621 9409</span>
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
-              <span>info@barriesfarm.ca</span>
+              <span>aspagarus@rogers.com</span>
             </div>
           </div>
           <div className="flex items-center space-x-1">

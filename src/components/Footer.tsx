@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -18,14 +18,27 @@ const Footer = () => {
                 and seasonal produce since 1948.
               </p>
               <div className="flex space-x-3">
-                <a href="#" className="text-farm-cream-200 hover:text-white transition-colors">
+                <a 
+                  href="https://www.facebook.com/share/199o1LDT6C/?mibextid=wwXIfr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-farm-cream-200 hover:text-white transition-colors"
+                >
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-farm-cream-200 hover:text-white transition-colors">
+                <a 
+                  href="https://www.instagram.com/barries_asparagus/?igsh=M3I3eW51eWdqNzd1#" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-farm-cream-200 hover:text-white transition-colors"
+                >
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-farm-cream-200 hover:text-white transition-colors">
-                  <Twitter className="h-5 w-5" />
+                <a 
+                  href="mailto:aspagarus@rogers.com" 
+                  className="text-farm-cream-200 hover:text-white transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -92,8 +105,8 @@ const Footer = () => {
               © 2024 Barrie's Asparagus Farm & Country Market. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Terms of Service</a>
+              <a href="#contact" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Privacy Policy</a>
+              <a href="#contact" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

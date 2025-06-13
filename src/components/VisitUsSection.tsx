@@ -11,6 +11,12 @@ const VisitUsSection = () => {
     }
   };
 
+  const openGoogleMaps = () => {
+    const address = "123 Country Road, Farmville, ON K1A 0A1";
+    const encodedAddress = encodeURIComponent(address);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+  };
+
   const reviews = [
     {
       name: "Sarah M.",
@@ -80,7 +86,10 @@ const VisitUsSection = () => {
                   </p>
                 </div>
                 
-                <Button className="w-full mt-4 bg-farm-green-600 hover:bg-farm-green-700">
+                <Button 
+                  className="w-full mt-4 bg-farm-green-600 hover:bg-farm-green-700"
+                  onClick={openGoogleMaps}
+                >
                   Get Directions
                 </Button>
               </div>
@@ -149,7 +158,7 @@ const VisitUsSection = () => {
                   <p>• Cash payments welcome</p>
                   <p>• Local cheques accepted with ID</p>
                   <p>• E-transfer to aspagarus@rogers.com</p>
-                  <p>• Seasonal CSA memberships available</p>
+                  <p>• <strong>Seasonal CSA memberships available</strong> - Community Supported Agriculture program where members receive weekly boxes of fresh seasonal produce throughout the growing season</p>
                 </div>
               </div>
 

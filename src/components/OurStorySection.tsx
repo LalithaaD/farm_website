@@ -45,13 +45,15 @@ const OurStorySection = () => {
               </div>
             </div>
 
-            {/* Image placeholder */}
-            <div className="bg-gradient-to-br from-farm-green-100 to-farm-cream-100 rounded-lg h-96 flex items-center justify-center">
-              <div className="text-center text-farm-brown-600">
-                <Users className="h-16 w-16 mx-auto mb-4" />
-                <p className="text-lg font-medium">Family Farm Photo</p>
-                <p className="text-sm">Four generations working the land</p>
-              </div>
+            {/* Family photo */}
+            <div className="space-y-4">
+              <div 
+                className="bg-cover bg-center rounded-lg h-96 shadow-lg"
+                style={{ backgroundImage: 'url(/lovable-uploads/7f4f1f48-2f91-4155-8063-2adf7e9bc60d.png)' }}
+              ></div>
+              <p className="text-center text-farm-brown-600 italic">
+                Tim Barrie, David Barrie and William Barrie posed for a photo at Barrie's Asparagus Farm & Country Market
+              </p>
             </div>
           </div>
 
