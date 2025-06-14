@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Wheat } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
               </h3>
               <p className="text-farm-cream-200 text-sm leading-relaxed">
                 Four generations of family farming, bringing you the freshest asparagus 
-                and seasonal produce since 1948.
+                and seasonal produce since 1892.
               </p>
               <div className="flex space-x-3">
                 <a 
@@ -43,7 +44,7 @@ const Footer = () => {
             </div>
 
             {/* Quick links */}
-            <div className="space-y-4">
+            <div className="space-y-4 md:ml-8">
               <h4 className="text-lg font-semibold text-farm-cream-100">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#home" className="text-farm-cream-200 hover:text-white transition-colors">Home</a></li>
@@ -56,7 +57,7 @@ const Footer = () => {
             </div>
 
             {/* Contact info */}
-            <div className="space-y-4">
+            <div className="space-y-4 md:ml-8">
               <h4 className="text-lg font-semibold text-farm-cream-100">Contact Info</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -69,7 +70,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2 text-farm-green-400" />
-                  <span className="text-farm-cream-200">519 621 9409</span>
+                  <span className="text-farm-cream-200">(519) 621-9409</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-farm-green-400" />
@@ -79,7 +80,7 @@ const Footer = () => {
             </div>
 
             {/* Hours */}
-            <div className="space-y-4">
+            <div className="space-y-4 md:ml-8">
               <h4 className="text-lg font-semibold text-farm-cream-100">Hours</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -90,10 +91,13 @@ const Footer = () => {
                     <p>Sun: 10AM-5PM</p>
                   </div>
                 </div>
-                <div className="text-farm-cream-200">
-                  <p className="font-medium text-farm-green-400">Asparagus Season</p>
-                  <p>April - June</p>
-                  <p>Fresh daily at 7AM</p>
+                <div className="flex items-start">
+                  <Wheat className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
+                  <div className="text-farm-cream-200">
+                    <p className="font-medium text-farm-green-400">Asparagus Season</p>
+                    <p>April - June</p>
+                    <p>Fresh daily at 7AM</p>
+                  </div>
                 </div>
               </div>
             </div>
