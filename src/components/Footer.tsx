@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Wheat } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Harvest } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-farm-brown-800 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Farm info */}
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-farm-cream-100">
@@ -43,21 +43,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick links */}
-            <div className="space-y-4 md:ml-8">
-              <h4 className="text-lg font-semibold text-farm-cream-100">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#home" className="text-farm-cream-200 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#story" className="text-farm-cream-200 hover:text-white transition-colors">Our Story</a></li>
-                <li><a href="#produce" className="text-farm-cream-200 hover:text-white transition-colors">What We Grow</a></li>
-                <li><a href="#store" className="text-farm-cream-200 hover:text-white transition-colors">Farm Store</a></li>
-                <li><a href="#visit" className="text-farm-cream-200 hover:text-white transition-colors">Visit Us</a></li>
-                <li><a href="#contact" className="text-farm-cream-200 hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-
-            {/* Contact info */}
-            <div className="space-y-4 md:ml-8">
+            {/* Contact info - moved down with mt-8 */}
+            <div className="space-y-4 mt-8">
               <h4 className="text-lg font-semibold text-farm-cream-100">Contact Info</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -79,8 +66,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Hours */}
-            <div className="space-y-4 md:ml-8">
+            {/* Hours - moved down with mt-8 */}
+            <div className="space-y-4 mt-8">
               <h4 className="text-lg font-semibold text-farm-cream-100">Hours</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -92,7 +79,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Wheat className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
+                  <Harvest className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
                   <div className="text-farm-cream-200">
                     <p className="font-medium text-farm-green-400">Asparagus Season</p>
                     <p>April - June</p>
