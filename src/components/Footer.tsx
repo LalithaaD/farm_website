@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Harvest } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Wheat } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -79,7 +79,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Harvest className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
+                  <Wheat className="h-4 w-4 mr-2 mt-0.5 text-farm-green-400" />
                   <div className="text-farm-cream-200">
                     <p className="font-medium text-farm-green-400">Asparagus Season</p>
                     <p>April - June</p>
