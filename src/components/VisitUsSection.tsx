@@ -1,16 +1,19 @@
 import React from 'react';
 import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const VisitUsSection = () => {
+  const navigate = useNavigate();
+
   const openGoogleMaps = () => {
     const address = "Barrie's Asparagus, 1236 Kings Rd, Cambridge, ON N1R 5S3";
     const encodedAddress = encodeURIComponent(address);
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
   };
 
   const openAllReviews = () => {
-    window.open('https://www.google.com/maps/place/Barrie\'s+Asparagus,+1236+Kings+Rd,+Cambridge,+ON+N1R+5S3/@43.3616,-80.3144,17z/data=!3m1!4b1!4m6!3m5!1s0x882c7a5e8b5e5b5b:0x5b5b5b5b5b5b5b5b!8m2!3d43.3616!4d-80.3144!16s%2Fg%2F1q5bmqj6b', '_blank');
+    navigate('/reviews');
   };
 
   const scrollToContact = () => {
@@ -74,22 +77,22 @@ const VisitUsSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Map and directions */}
             <div className="space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 h-full">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <MapPin className="h-5 w-5 mr-2" />
                   Location & Directions
                 </h3>
                 
                 {/* Real Google Maps embed */}
-                <div className="rounded-lg overflow-hidden h-48 mb-4 relative">
+                <div className="rounded-lg overflow-hidden h-48 mb-4 relative cursor-pointer" onClick={openGoogleMaps}>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.123456789!2d-80.3144!3d43.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c7a5e8b5e5b5b%3A0x5b5b5b5b5b5b5b5b!2sBarrie's%20Asparagus%2C%201236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
                     width="100%"
                     height="100%"
-                    style={{ border: 0 }}
+                    style={{ border: 0, pointerEvents: 'none' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -99,7 +102,10 @@ const VisitUsSection = () => {
                     <Button 
                       size="sm" 
                       className="bg-white/90 text-farm-brown-800 hover:bg-white text-xs"
-                      onClick={openGoogleMaps}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openGoogleMaps();
+                      }}
                     >
                       View larger map
                     </Button>
@@ -196,14 +202,14 @@ const VisitUsSection = () => {
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex flex-col h-full">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <Star className="h-5 w-5 mr-2" />
                   What Visitors Say
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  {reviews.map((review, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 flex-grow">
+                  {reviews.slice(0, 6).map((review, index) => (
                     <div key={index} className="border-l-4 border-farm-green-600 pl-4 h-full flex flex-col">
                       <div className="flex items-center mb-2">
                         <div className="flex">
@@ -219,7 +225,7 @@ const VisitUsSection = () => {
                   ))}
                 </div>
                 
-                <div className="text-center">
+                <div className="text-center mt-auto">
                   <p className="text-sm text-farm-brown-600 mb-2">Average Rating: 4.9/5 (30 reviews)</p>
                   <Button 
                     variant="outline" 

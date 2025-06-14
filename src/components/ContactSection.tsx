@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -59,23 +58,22 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact information */}
             <div className="space-y-8">
-              <div>
+              <div className="h-full flex flex-col">
                 <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
                   Contact Information
                 </h3>
                 
-                <div className="space-y-6">
+                <div className="space-y-6 flex-grow">
                   <div className="flex items-start">
                     <div className="bg-farm-green-600 text-white p-3 rounded-lg mr-4 mt-1">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Phone</h4>
-                      <p className="text-farm-brown-600">519 621 9409</p>
-                      <p className="text-sm text-farm-brown-500">Monday - Saturday 9AM-6PM</p>
+                      <p className="text-farm-brown-600">519621 9409</p>
                     </div>
                   </div>
 
@@ -133,13 +131,13 @@ const ContactSection = () => {
             </div>
 
             {/* Contact form */}
-            <div className="bg-farm-cream-50 rounded-lg p-8">
+            <div className="bg-farm-cream-50 rounded-lg p-8 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6 flex items-center">
                 <MessageSquare className="h-6 w-6 mr-2" />
                 Send Us a Message
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-farm-brown-700 mb-2">
@@ -184,7 +182,7 @@ const ContactSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(519) 621-9409"
+                      placeholder="519621 9409"
                       className="w-full"
                     />
                   </div>
@@ -211,7 +209,7 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div>
+                <div className="flex-grow">
                   <label htmlFor="message" className="block text-sm font-medium text-farm-brown-700 mb-2">
                     Message *
                   </label>
@@ -223,13 +221,13 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     placeholder="Tell us how we can help you..."
                     rows={5}
-                    className="w-full"
+                    className="w-full h-full"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group"
+                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group mt-auto"
                 >
                   Send Message
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
