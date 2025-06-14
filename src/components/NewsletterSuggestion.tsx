@@ -40,8 +40,8 @@ const NewsletterSuggestion = () => {
 
   return (
     <>
-      {/* Desktop Version - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-50 hidden md:block animate-fade-in">
+      {/* Desktop Version - Middle Right */}
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:block animate-fade-in">
         <div className="bg-gradient-to-br from-farm-green-50 to-farm-green-100 border-2 border-farm-green-200 rounded-2xl shadow-lg p-6 max-w-sm relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-16 h-16 bg-farm-green-200 rounded-full opacity-20 -translate-y-8 translate-x-8"></div>
