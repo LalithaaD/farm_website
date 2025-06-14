@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -58,9 +59,9 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Contact information */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex flex-col">
               <div className="h-full flex flex-col">
                 <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
                   Contact Information
@@ -73,7 +74,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Phone</h4>
-                      <p className="text-farm-brown-600">519621 9409</p>
+                      <p className="text-farm-brown-600">(519) 621-9409</p>
                     </div>
                   </div>
 
@@ -131,7 +132,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact form */}
-            <div className="bg-farm-cream-50 rounded-lg p-8 h-full flex flex-col">
+            <div className="bg-farm-cream-50 rounded-lg p-8 flex flex-col">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6 flex items-center">
                 <MessageSquare className="h-6 w-6 mr-2" />
                 Send Us a Message
@@ -182,7 +183,7 @@ const ContactSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="519621 9409"
+                      placeholder="(519) 621-9409"
                       className="w-full"
                     />
                   </div>
@@ -201,7 +202,6 @@ const ContactSection = () => {
                       <option value="">Select a topic</option>
                       <option value="general">General Inquiry</option>
                       <option value="produce">Produce Availability</option>
-                      <option value="wholesale">Wholesale Orders</option>
                       <option value="tours">Farm Tours</option>
                       <option value="events">Special Events</option>
                       <option value="other">Other</option>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -77,10 +78,10 @@ const VisitUsSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Map and directions */}
-            <div className="space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 h-full">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left column - Map and Hours */}
+            <div className="space-y-6 flex flex-col">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex-1">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <MapPin className="h-5 w-5 mr-2" />
                   Location & Directions
@@ -135,7 +136,7 @@ const VisitUsSection = () => {
                 </Button>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex-1">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <Clock className="h-5 w-5 mr-2" />
                   Hours & Seasons
@@ -145,7 +146,6 @@ const VisitUsSection = () => {
                   <div>
                     <h4 className="font-semibold text-farm-green-600 mb-2">Country Market</h4>
                     <div className="text-sm text-farm-brown-700 space-y-1">
-                      <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
                       <p>Sunday: 10:00 AM - 5:00 PM</p>
                       <p className="text-xs text-farm-brown-500">Open year-round</p>
                     </div>
@@ -172,9 +172,9 @@ const VisitUsSection = () => {
               </div>
             </div>
 
-            {/* Payment and reviews */}
-            <div className="space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6">
+            {/* Right column - Payment and Reviews */}
+            <div className="space-y-6 flex flex-col">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex-1">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <CreditCard className="h-5 w-5 mr-2" />
                   Payment Options
@@ -202,7 +202,7 @@ const VisitUsSection = () => {
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex flex-col h-full">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-farm-brown-800 mb-4 flex items-center">
                   <Star className="h-5 w-5 mr-2" />
                   What Visitors Say
@@ -210,7 +210,7 @@ const VisitUsSection = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 flex-grow">
                   {reviews.slice(0, 6).map((review, index) => (
-                    <div key={index} className="border-l-4 border-farm-green-600 pl-4 h-full flex flex-col">
+                    <div key={index} className="border-l-4 border-farm-green-600 pl-4 flex flex-col min-h-[120px]">
                       <div className="flex items-center mb-2">
                         <div className="flex">
                           {[...Array(review.rating)].map((_, i) => (
@@ -225,7 +225,7 @@ const VisitUsSection = () => {
                   ))}
                 </div>
                 
-                <div className="text-center mt-auto">
+                <div className="text-center">
                   <p className="text-sm text-farm-brown-600 mb-2">Average Rating: 4.9/5 (30 reviews)</p>
                   <Button 
                     variant="outline" 

@@ -23,7 +23,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone className="h-3 w-3" />
-              <span>519 621 9409</span>
+              <span>(519) 621-9409</span>
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
@@ -32,7 +32,7 @@ const Navigation = () => {
           </div>
           <div className="flex items-center space-x-1">
             <MapPin className="h-3 w-3" />
-            <span>Open Daily 8am-6pm | Fresh Asparagus Season: April-June</span>
+            <span>1236 Kings Rd Cambridge, ON | Fresh Asparagus Season: April-June</span>
           </div>
         </div>
       </div>
