@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 
@@ -103,11 +102,8 @@ const Footer = () => {
           {/* Bottom bar */}
           <div className="border-t border-farm-brown-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left">
-              <p className="text-farm-cream-200 text-sm mb-2">
-                © 2024 Barrie's Asparagus Farm & Country Market. All rights reserved.
-              </p>
               <p className="text-farm-cream-200 text-sm">
-                Made with ❤️ by{' '}
+                © 2024 Made with ❤️ by{' '}
                 <a 
                   href="https://lalithaad.github.io/Portfolio/" 
                   target="_blank" 

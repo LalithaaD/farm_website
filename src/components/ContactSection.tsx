@@ -130,28 +130,6 @@ const ContactSection = () => {
                   No spam, unsubscribe anytime. Sent weekly during growing season.
                 </p>
               </div>
-
-              {/* Quick contact cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-farm-cream-50 rounded-lg p-4 text-center">
-                  <h4 className="font-semibold text-farm-brown-800 mb-2">🥬 Wholesale Orders</h4>
-                  <p className="text-sm text-farm-brown-600 mb-2">
-                    Restaurants & markets
-                  </p>
-                  <Button variant="outline" size="sm" className="border-farm-green-600 text-farm-green-600">
-                    Learn More
-                  </Button>
-                </div>
-                <div className="bg-farm-cream-50 rounded-lg p-4 text-center">
-                  <h4 className="font-semibold text-farm-brown-800 mb-2">👥 Group Tours</h4>
-                  <p className="text-sm text-farm-brown-600 mb-2">
-                    Schools & organizations
-                  </p>
-                  <Button variant="outline" size="sm" className="border-farm-green-600 text-farm-green-600">
-                    Book Tour
-                  </Button>
-                </div>
-              </div>
             </div>
 
             {/* Contact form */}

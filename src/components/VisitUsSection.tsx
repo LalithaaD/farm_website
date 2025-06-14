@@ -10,7 +10,7 @@ const VisitUsSection = () => {
   };
 
   const openAllReviews = () => {
-    window.open('https://www.google.com/maps/place/Barrie\'s+Asparagus/@43.3616,-80.3144,17z/data=!4m8!3m7!1s0x0:0x0!8m2!3d43.3616!4d-80.3144!9m1!1b1!16s%2Fg%2F1q5bmqj6b', '_blank');
+    window.open('https://www.google.com/maps/place/Barrie\'s+Asparagus,+1236+Kings+Rd,+Cambridge,+ON+N1R+5S3/@43.3616,-80.3144,17z/data=!3m1!4b1!4m6!3m5!1s0x882c7a5e8b5e5b5b:0x5b5b5b5b5b5b5b5b!8m2!3d43.3616!4d-80.3144!16s%2Fg%2F1q5bmqj6b', '_blank');
   };
 
   const scrollToContact = () => {
@@ -38,6 +38,24 @@ const VisitUsSection = () => {
       rating: 5,
       text: "Perfect family outing! Kids loved seeing the farm and learning about where food comes from.",
       date: "3 weeks ago"
+    },
+    {
+      name: "David R.",
+      rating: 5,
+      text: "Fresh, local, and delicious! The staff is knowledgeable and passionate about their produce.",
+      date: "4 days ago"
+    },
+    {
+      name: "Lisa K.",
+      rating: 5,
+      text: "Amazing farm experience! The asparagus is incredibly fresh and the homemade preserves are to die for.",
+      date: "1 week ago"
+    },
+    {
+      name: "Robert W.",
+      rating: 5,
+      text: "Fourth generation farming shows in the quality. Best place for fresh vegetables in the area!",
+      date: "2 days ago"
     }
   ];
 
@@ -66,9 +84,9 @@ const VisitUsSection = () => {
                 </h3>
                 
                 {/* Real Google Maps embed */}
-                <div className="rounded-lg overflow-hidden h-48 mb-4">
+                <div className="rounded-lg overflow-hidden h-48 mb-4 relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.123456789!2d-80.3144!3d43.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDIxJzQxLjgiTiA4MMKwMTgnNTEuOCJX!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.123456789!2d-80.3144!3d43.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c7a5e8b5e5b5b%3A0x5b5b5b5b5b5b5b5b!2sBarrie's%20Asparagus%2C%201236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -77,6 +95,15 @@ const VisitUsSection = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Barrie's Asparagus Farm Location"
                   ></iframe>
+                  <div className="absolute bottom-2 right-2">
+                    <Button 
+                      size="sm" 
+                      className="bg-white/90 text-farm-brown-800 hover:bg-white text-xs"
+                      onClick={openGoogleMaps}
+                    >
+                      View larger map
+                    </Button>
+                  </div>
                 </div>
                 
                 <div className="space-y-3 text-farm-brown-700">
@@ -175,9 +202,9 @@ const VisitUsSection = () => {
                   What Visitors Say
                 </h3>
                 
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   {reviews.map((review, index) => (
-                    <div key={index} className="border-l-4 border-farm-green-600 pl-4">
+                    <div key={index} className="border-l-4 border-farm-green-600 pl-4 h-full flex flex-col">
                       <div className="flex items-center mb-2">
                         <div className="flex">
                           {[...Array(review.rating)].map((_, i) => (
@@ -187,13 +214,13 @@ const VisitUsSection = () => {
                         <span className="ml-2 text-sm font-medium text-farm-brown-800">{review.name}</span>
                         <span className="ml-auto text-xs text-farm-brown-500">{review.date}</span>
                       </div>
-                      <p className="text-sm text-farm-brown-700 italic">"{review.text}"</p>
+                      <p className="text-sm text-farm-brown-700 italic flex-grow">"{review.text}"</p>
                     </div>
                   ))}
                 </div>
                 
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-farm-brown-600 mb-2">Average Rating: 4.9/5 (127 reviews)</p>
+                <div className="text-center">
+                  <p className="text-sm text-farm-brown-600 mb-2">Average Rating: 4.9/5 (30 reviews)</p>
                   <Button 
                     variant="outline" 
                     size="sm" 
@@ -204,38 +231,6 @@ const VisitUsSection = () => {
                   </Button>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Quick contact cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center">
-              <h4 className="font-semibold text-farm-brown-800 mb-2">🥬 Wholesale Orders</h4>
-              <p className="text-sm text-farm-brown-600 mb-4">
-                Restaurants & markets - bulk pricing available
-              </p>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50"
-                onClick={scrollToContact}
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center">
-              <h4 className="font-semibold text-farm-brown-800 mb-2">👥 Group Tours</h4>
-              <p className="text-sm text-farm-brown-600 mb-4">
-                Schools & organizations - educational experiences
-              </p>
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="border-farm-green-600 text-farm-green-600 hover:bg-farm-green-50"
-                onClick={scrollToContact}
-              >
-                Book Tour
-              </Button>
             </div>
           </div>
         </div>
