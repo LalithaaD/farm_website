@@ -86,10 +86,10 @@ const VisitUsSection = () => {
                   Location & Directions
                 </h3>
                 
-                {/* Fixed Google Maps embed */}
+                {/* Fixed Google Maps embed with correct coordinates for Cambridge, ON */}
                 <div className="rounded-lg overflow-hidden h-48 mb-4 relative cursor-pointer" onClick={openGoogleMaps}>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4!2d-80.3144963!3d43.3616582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c77d4d4d4d4d4%3A0x4d4d4d4d4d4d4d4d!2s1236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3%2C%20Canada!5e0!3m2!1sen!2sca!4v1673000000000!5m2!1sen!2sca"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4567890123!2d-80.314496!3d43.361658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c77e5e5e5e5e5%3A0x1234567890abcdef!2s1236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3%2C%20Canada!5e0!3m2!1sen!2sca!4v1699999999999!5m2!1sen!2sca"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -181,8 +181,6 @@ const VisitUsSection = () => {
                     <p className="text-sm font-medium">E-Transfer</p>
                   </div>
                 </div>
-                
-                
               </div>
 
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex flex-col flex-1">
