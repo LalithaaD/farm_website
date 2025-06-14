@@ -8,7 +8,7 @@ const NewsletterSuggestion = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!hasScrolled) {
+      if (!hasScrolled && window.scrollY > 0) {
         setHasScrolled(true);
         setIsVisible(true);
       }
