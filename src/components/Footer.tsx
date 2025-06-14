@@ -102,9 +102,23 @@ const Footer = () => {
 
           {/* Bottom bar */}
           <div className="border-t border-farm-brown-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-farm-cream-200 text-sm">
-              © 2024 Barrie's Asparagus Farm & Country Market. All rights reserved.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-farm-cream-200 text-sm mb-2">
+                © 2024 Barrie's Asparagus Farm & Country Market. All rights reserved.
+              </p>
+              <p className="text-farm-cream-200 text-sm">
+                Made with ❤️ by{' '}
+                <a 
+                  href="https://lalithaad.github.io/Portfolio/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-farm-green-400 hover:text-farm-green-300 transition-colors"
+                >
+                  Lalitha Madhuri Divakaruni
+                </a>
+                {' '}for Barrie's Asparagus Farm & Country Market
+              </p>
+            </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a href="#contact" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Privacy Policy</a>
               <a href="#contact" className="text-farm-cream-200 hover:text-white text-sm transition-colors">Terms of Service</a>
