@@ -27,7 +27,7 @@ const ContactSection = () => {
     console.log('Form submitted:', formData);
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description: "Thank you for contacting us. We'll get back to you soon.",
     });
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
   };
@@ -108,50 +108,18 @@ const ContactSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            {/* Contact information */}
-            <div className="space-y-8 flex flex-col">
-              <div className="h-full flex flex-col">
-                <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
-                  Contact Information
-                </h3>
-                
-                <div className="space-y-6 flex-grow">
-                  <div className="flex items-start">
-                    <div className="bg-farm-green-600 text-white p-3 rounded-lg mr-4 mt-1">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-farm-brown-800 mb-1">Phone</h4>
-                      <p className="text-farm-brown-600">(519) 621-9409</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-farm-green-600 text-white p-3 rounded-lg mr-4 mt-1">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-farm-brown-800 mb-1">Email</h4>
-                      <p className="text-farm-brown-600">aspagarus@rogers.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-farm-green-600 text-white p-3 rounded-lg mr-4 mt-1">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-farm-brown-800 mb-1">Address</h4>
-                      <p className="text-farm-brown-600">Barrie's Asparagus</p>
-                      <p className="text-farm-brown-600">1236 Kings Rd</p>
-                      <p className="text-farm-brown-600">Cambridge, ON N1R 5S3</p>
-                    </div>
-                  </div>
-                </div>
+            {/* Farm Sign Image - Left Side */}
+            <div className="flex flex-col">
+              <div className="h-full flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/1bf3fb0e-bd2f-4778-9cc7-b533af88eed8.png" 
+                  alt="Barrie's Asparagus Farm Sign - Welcome to Cedardale Farm"
+                  className="w-full h-auto max-w-lg rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                />
               </div>
             </div>
 
-            {/* Contact form */}
+            {/* Contact form - Right Side */}
             <div className="bg-farm-cream-50 rounded-lg p-8 flex flex-col">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6 flex items-center">
                 <MessageSquare className="h-6 w-6 mr-2" />
