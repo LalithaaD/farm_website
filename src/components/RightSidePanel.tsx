@@ -1,13 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
-import { Apple, Wheat, TreePine, Flower } from 'lucide-react';
+import { Apple, Wheat, TreePine, Flower, Carrot, Leaf, Sun, Sprout, Heart, Star, Gift, Coffee, ShoppingCart, MessageCircle } from 'lucide-react';
 
 const RightSidePanel = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsVisible(true);
+        
+        // Determine current section based on scroll position
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const sectionIndex = Math.floor(scrollPosition / (windowHeight * 0.8));
+        setCurrentSection(Math.min(sectionIndex, 6)); // Max 7 sections (0-6)
       } else {
         setIsVisible(false);
       }
@@ -22,6 +30,19 @@ const RightSidePanel = () => {
 
   if (!isVisible) return null;
 
+  const iconSets = [
+    [Sun, Star, Heart, Gift], // Home/Hero
+    [Carrot, Apple, Wheat, Leaf], // Produce
+    [Heart, Star, Coffee, Gift], // Our Story
+    [TreePine, Flower, Sun, Leaf], // Visit Us
+    [ShoppingCart, Gift, Star, Coffee], // Farm Store
+    [MessageCircle, Heart, Star, Gift], // Contact
+    [Sun, TreePine, Flower, Star] // Footer
+  ];
+
+  const currentIcons = iconSets[currentSection] || iconSets[0];
+  const [Icon1, Icon2, Icon3, Icon4] = currentIcons;
+
   return (
     <div className="fixed right-0 top-0 h-full w-16 bg-gradient-to-b from-farm-cream-50 to-farm-brown-50 border-l border-farm-brown-200 z-40 hidden lg:flex flex-col items-center justify-center animate-fade-in">
       {/* Decorative background pattern */}
@@ -35,16 +56,16 @@ const RightSidePanel = () => {
       {/* Animated icons */}
       <div className="relative z-10 flex flex-col space-y-8">
         <div className="animate-pulse">
-          <Apple className="h-6 w-6 text-farm-brown-600 hover:text-farm-brown-800 transition-colors duration-300" />
+          <Icon1 className="h-6 w-6 text-farm-brown-600 hover:text-farm-brown-800 transition-colors duration-300" />
         </div>
         <div className="animate-bounce" style={{ animationDelay: '0.3s' }}>
-          <Wheat className="h-6 w-6 text-farm-cream-700 hover:text-farm-cream-900 transition-colors duration-300" />
+          <Icon2 className="h-6 w-6 text-farm-cream-700 hover:text-farm-cream-900 transition-colors duration-300" />
         </div>
         <div className="animate-pulse" style={{ animationDelay: '0.7s' }}>
-          <TreePine className="h-6 w-6 text-farm-green-600 hover:text-farm-green-800 transition-colors duration-300" />
+          <Icon3 className="h-6 w-6 text-farm-green-600 hover:text-farm-green-800 transition-colors duration-300" />
         </div>
         <div className="animate-bounce" style={{ animationDelay: '1.2s' }}>
-          <Flower className="h-6 w-6 text-farm-green-500 hover:text-farm-green-700 transition-colors duration-300" />
+          <Icon4 className="h-6 w-6 text-farm-green-500 hover:text-farm-green-700 transition-colors duration-300" />
         </div>
       </div>
     </div>

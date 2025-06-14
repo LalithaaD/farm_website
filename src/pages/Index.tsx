@@ -19,7 +19,7 @@ const Index = () => {
       <RightSidePanel />
       
       {/* Main Content */}
-      <div className="lg:px-16">
+      <div>
         <Navigation />
         <HeroSection />
         <ProduceSection />
