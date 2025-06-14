@@ -74,7 +74,7 @@ const NewsletterSuggestion = () => {
           {/* Content */}
           <div className="relative z-10">
             <p className="text-farm-brown-700 font-serif text-sm leading-relaxed mb-4">
-              🌿 Want fresh farm updates, recipes, and offers? Join our newsletter!
+              🥕 Love local? Get the latest on our harvests and handmade goodies!
             </p>
             
             <button
@@ -106,7 +106,7 @@ const NewsletterSuggestion = () => {
           {/* Content */}
           <div className="relative z-10 pr-8">
             <p className="text-farm-brown-700 font-serif text-sm leading-relaxed mb-3">
-              🌿 Want fresh farm updates? Join our newsletter!
+              🥕 Love local? Get the latest on our harvests and handmade goodies!
             </p>
             
             <button
