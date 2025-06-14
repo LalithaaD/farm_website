@@ -1,10 +1,29 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Apple, Wheat, TreePine, Flower } from 'lucide-react';
 
 const RightSidePanel = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  if (!isVisible) return null;
+
   return (
-    <div className="fixed right-0 top-0 h-full w-16 bg-gradient-to-b from-farm-cream-50 to-farm-brown-50 border-l border-farm-brown-200 z-40 hidden lg:flex flex-col items-center justify-center">
+    <div className="fixed right-0 top-0 h-full w-16 bg-gradient-to-b from-farm-cream-50 to-farm-brown-50 border-l border-farm-brown-200 z-40 hidden lg:flex flex-col items-center justify-center animate-fade-in">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-16 left-1/2 w-6 h-6 bg-farm-brown-400 rounded-full transform -translate-x-1/2"></div>
