@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,6 +11,13 @@ const VisitUsSection = () => {
 
   const openAllReviews = () => {
     window.open('https://www.google.com/maps/place/Barrie\'s+Asparagus/@43.3616,-80.3144,17z/data=!4m8!3m7!1s0x0:0x0!8m2!3d43.3616!4d-80.3144!9m1!1b1!16s%2Fg%2F1q5bmqj6b', '_blank');
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const reviews = [
