@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
+import { Tractor } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,7 +16,7 @@ const Footer = () => {
               </h3>
               <p className="text-farm-cream-200 text-sm leading-relaxed">
                 Four generations of family farming, bringing you the freshest asparagus 
-                and seasonal produce since 1948.
+                and seasonal produce since 1892.
               </p>
               <div className="flex space-x-3">
                 <a 
@@ -42,8 +44,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick links */}
-            <div className="space-y-4">
+            {/* Quick links - moved right with margin */}
+            <div className="space-y-4 ml-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#home" className="text-farm-cream-200 hover:text-white transition-colors">Home</a></li>
@@ -55,8 +57,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact info */}
-            <div className="space-y-4">
+            {/* Contact info - moved right with margin */}
+            <div className="space-y-4 ml-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Contact Info</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -69,7 +71,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2 text-farm-green-400" />
-                  <span className="text-farm-cream-200">519 621 9409</span>
+                  <span className="text-farm-cream-200">(519) 621-9409</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-farm-green-400" />
@@ -78,8 +80,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Hours */}
-            <div className="space-y-4">
+            {/* Hours - moved right with margin */}
+            <div className="space-y-4 ml-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Hours</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -91,7 +93,10 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="text-farm-cream-200">
-                  <p className="font-medium text-farm-green-400">Asparagus Season</p>
+                  <div className="flex items-center mb-1">
+                    <Tractor className="h-4 w-4 mr-2 text-farm-green-400" />
+                    <p className="font-medium text-farm-green-400">Asparagus Season</p>
+                  </div>
                   <p>April - June</p>
                   <p>Fresh daily at 7AM</p>
                 </div>

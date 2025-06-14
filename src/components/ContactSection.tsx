@@ -85,7 +85,6 @@ const ContactSection = () => {
                     <div>
                       <h4 className="font-semibold text-farm-brown-800 mb-1">Email</h4>
                       <p className="text-farm-brown-600">aspagarus@rogers.com</p>
-                      <p className="text-sm text-farm-brown-500">We respond within 24 hours</p>
                     </div>
                   </div>
 
@@ -98,35 +97,34 @@ const ContactSection = () => {
                       <p className="text-farm-brown-600">Barrie's Asparagus</p>
                       <p className="text-farm-brown-600">1236 Kings Rd</p>
                       <p className="text-farm-brown-600">Cambridge, ON N1R 5S3</p>
-                      <p className="text-sm text-farm-brown-500">15 minutes from downtown</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Newsletter signup */}
-              <div className="bg-farm-green-50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-farm-brown-800 mb-4">
+              {/* Newsletter signup - smaller section with animations */}
+              <div className="bg-farm-green-50 rounded-lg p-4 animate-fade-in">
+                <h3 className="text-lg font-bold text-farm-brown-800 mb-3 animate-slide-in-right">
                   📧 Farm Newsletter
                 </h3>
-                <p className="text-farm-brown-600 mb-4">
-                  Get weekly updates on what's fresh, seasonal recipes, and farm events!
+                <p className="text-farm-brown-600 mb-3 text-sm animate-fade-in">
+                  Get weekly updates on what's fresh and seasonal recipes!
                 </p>
-                <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <form onSubmit={handleNewsletterSubmit} className="flex gap-2 animate-scale-in">
                   <Input 
                     type="email" 
                     placeholder="Your email address"
-                    className="flex-1"
+                    className="flex-1 text-sm"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     required
                   />
-                  <Button type="submit" className="bg-farm-green-600 hover:bg-farm-green-700">
+                  <Button type="submit" className="bg-farm-green-600 hover:bg-farm-green-700 text-sm px-3">
                     Subscribe
                   </Button>
                 </form>
                 <p className="text-xs text-farm-brown-500 mt-2">
-                  No spam, unsubscribe anytime. Sent weekly during growing season.
+                  No spam, unsubscribe anytime.
                 </p>
               </div>
             </div>
