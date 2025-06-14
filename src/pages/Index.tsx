@@ -7,6 +7,7 @@ import VisitUsSection from "@/components/VisitUsSection";
 import FarmStoreSection from "@/components/FarmStoreSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import NewsletterSuggestion from "@/components/NewsletterSuggestion";
 
 const Index = () => {
   return (
@@ -19,6 +20,9 @@ const Index = () => {
       <FarmStoreSection />
       <ContactSection />
       <Footer />
+      
+      {/* Newsletter Suggestion Popup */}
+      <NewsletterSuggestion />
     </div>
   );
 };
