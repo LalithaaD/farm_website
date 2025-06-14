@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, MessageSquare, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -59,6 +59,54 @@ const ContactSection = () => {
             </p>
           </div>
 
+          {/* Newsletter Section - Separate and Animated */}
+          <div className="mb-16 animate-fade-in">
+            <div className="bg-gradient-to-br from-farm-green-50 via-farm-cream-50 to-farm-green-100 rounded-2xl p-8 relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-farm-green-200 rounded-full opacity-20 -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-farm-cream-200 rounded-full opacity-30 translate-y-12 -translate-x-12"></div>
+              
+              <div className="relative z-10 text-center max-w-2xl mx-auto">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-farm-green-600 text-white rounded-full mb-6 animate-pulse">
+                  <Mail className="h-8 w-8" />
+                </div>
+                
+                <h3 className="text-3xl font-bold text-farm-brown-800 mb-4 flex items-center justify-center gap-2">
+                  <Sparkles className="h-6 w-6 text-farm-green-600 animate-spin" />
+                  Farm Newsletter
+                  <Sparkles className="h-6 w-6 text-farm-green-600 animate-spin" />
+                </h3>
+                
+                <p className="text-lg text-farm-brown-600 mb-6 leading-relaxed">
+                  🌱 Get weekly updates on what's fresh, seasonal recipes, and farm events! 
+                  Join our growing community of fresh food lovers.
+                </p>
+                
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <Input 
+                    type="email" 
+                    placeholder="Enter your email address"
+                    className="flex-1 h-12 text-base border-2 border-farm-green-200 focus:border-farm-green-500 rounded-lg transition-all duration-300"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="bg-farm-green-600 hover:bg-farm-green-700 h-12 px-8 text-base font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Subscribe
+                    <Sparkles className="ml-2 h-4 w-4" />
+                  </Button>
+                </form>
+                
+                <p className="text-sm text-farm-brown-500 mt-4 opacity-80">
+                  ✨ No spam, unsubscribe anytime. Sent weekly during growing season.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Contact information */}
             <div className="space-y-8 flex flex-col">
@@ -100,32 +148,6 @@ const ContactSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Newsletter signup */}
-              <div className="bg-farm-green-50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-farm-brown-800 mb-4">
-                  📧 Farm Newsletter
-                </h3>
-                <p className="text-farm-brown-600 mb-4">
-                  Get weekly updates on what's fresh, seasonal recipes, and farm events!
-                </p>
-                <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                  <Input 
-                    type="email" 
-                    placeholder="Your email address"
-                    className="flex-1"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    required
-                  />
-                  <Button type="submit" className="bg-farm-green-600 hover:bg-farm-green-700">
-                    Subscribe
-                  </Button>
-                </form>
-                <p className="text-xs text-farm-brown-500 mt-2">
-                  No spam, unsubscribe anytime. Sent weekly during growing season.
-                </p>
               </div>
             </div>
 
