@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Send, User, MessageSquare, Sparkles } from 'lucide
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -107,137 +108,144 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Farm Sign Image and Contact Info - Left Side */}
-            <div className="flex flex-col space-y-6">
-              <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/1bf3fb0e-bd2f-4778-9cc7-b533af88eed8.png" 
-                  alt="Barrie's Asparagus Farm Sign - Welcome to Cedardale Farm"
-                  className="w-full h-auto max-w-lg rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                />
-              </div>
-              
-              {/* Contact Information Below Image */}
-              <div className="text-center space-y-3">
-                <div className="flex items-center justify-center text-farm-brown-700">
-                  <Phone className="h-5 w-5 mr-2 text-farm-green-600" />
-                  <span className="text-lg font-medium">(519) 621-9409</span>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Farm Sign Image Card - Left Side */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="flex flex-col space-y-6">
+                  <div className="flex justify-center">
+                    <img 
+                      src="/lovable-uploads/1bf3fb0e-bd2f-4778-9cc7-b533af88eed8.png" 
+                      alt="Barrie's Asparagus Farm Sign - Welcome to Cedardale Farm"
+                      className="w-full h-auto max-w-lg rounded-lg shadow-md"
+                    />
+                  </div>
+                  
+                  {/* Contact Information Below Image */}
+                  <div className="text-center space-y-3">
+                    <div className="flex items-center justify-center text-farm-brown-700">
+                      <Phone className="h-5 w-5 mr-2 text-farm-green-600" />
+                      <span className="text-lg font-medium">(519) 621-9409</span>
+                    </div>
+                    <div className="flex items-center justify-center text-farm-brown-700">
+                      <Mail className="h-5 w-5 mr-2 text-farm-green-600" />
+                      <span className="text-lg font-medium">aspagarus@rogers.com</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center text-farm-brown-700">
-                  <Mail className="h-5 w-5 mr-2 text-farm-green-600" />
-                  <span className="text-lg font-medium">aspagarus@rogers.com</span>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
-            {/* Contact form - Right Side */}
-            <div className="bg-farm-cream-50 rounded-lg p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-farm-brown-800 mb-6 flex items-center">
-                <MessageSquare className="h-6 w-6 mr-2" />
-                Send Us a Message
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col">
-                <div className="grid md:grid-cols-2 gap-4">
+            {/* Contact Form Card - Right Side */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="flex items-center text-farm-brown-800">
+                  <MessageSquare className="h-6 w-6 mr-2" />
+                  Send Us a Message
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                        Name *
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your full name"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                        Email *
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="your@email.com"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                        Phone
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="(519) 621-9409"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                        Subject *
+                      </label>
+                      <select
+                        id="subject"
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-farm-green-500"
+                      >
+                        <option value="">Select a topic</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="produce">Produce Availability</option>
+                        <option value="tours">Farm Tours</option>
+                        <option value="events">Special Events</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-farm-brown-700 mb-2">
-                      Name *
+                    <label htmlFor="message" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                      Message *
                     </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
+                    <Textarea
+                      id="message"
+                      name="message"
                       required
-                      value={formData.name}
+                      value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Your full name"
+                      placeholder="Tell us how we can help you..."
+                      rows={5}
                       className="w-full"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-farm-brown-700 mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your@email.com"
-                      className="w-full"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-farm-brown-700 mb-2">
-                      Phone
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(519) 621-9409"
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-farm-brown-700 mb-2">
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-farm-green-500"
-                    >
-                      <option value="">Select a topic</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="produce">Produce Availability</option>
-                      <option value="tours">Farm Tours</option>
-                      <option value="events">Special Events</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group"
+                  >
+                    Send Message
+                    <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
 
-                <div className="flex-grow">
-                  <label htmlFor="message" className="block text-sm font-medium text-farm-brown-700 mb-2">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Tell us how we can help you..."
-                    rows={5}
-                    className="w-full h-full"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group mt-auto"
-                >
-                  Send Message
-                  <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-
-                <p className="text-xs text-farm-brown-500 text-center">
-                  * Required fields. We'll respond within 24 hours during business days.
-                </p>
-              </form>
-            </div>
+                  <p className="text-xs text-farm-brown-500 text-center">
+                    * Required fields. We'll respond within 24 hours during business days.
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
