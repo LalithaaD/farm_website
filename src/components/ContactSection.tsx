@@ -1,11 +1,10 @@
 
-import React, { useState, useCallback } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send, User, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import DOMPurify from 'dompurify';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -16,156 +15,34 @@ const ContactSection = () => {
     message: ''
   });
   const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [lastSubmissionTime, setLastSubmissionTime] = useState(0);
   const { toast } = useToast();
 
-  // Rate limiting: 1 submission per 30 seconds
-  const RATE_LIMIT_MS = 30000;
-
-  // Input sanitization function
-  const sanitizeInput = (input: string): string => {
-    return DOMPurify.sanitize(input.trim(), { ALLOWED_TAGS: [] });
-  };
-
-  // Enhanced email validation
-  const isValidEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email) && email.length <= 254;
-  };
-
-  // Enhanced phone validation
-  const isValidPhone = (phone: string): boolean => {
-    if (!phone) return true; // Phone is optional
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
-  };
-
-  // Form validation
-  const validateForm = (): boolean => {
-    const sanitizedData = {
-      name: sanitizeInput(formData.name),
-      email: sanitizeInput(formData.email),
-      phone: sanitizeInput(formData.phone),
-      subject: sanitizeInput(formData.subject),
-      message: sanitizeInput(formData.message)
-    };
-
-    if (!sanitizedData.name || sanitizedData.name.length < 2 || sanitizedData.name.length > 50) {
-      toast({
-        title: "Invalid Name",
-        description: "Name must be between 2 and 50 characters.",
-        variant: "destructive"
-      });
-      return false;
-    }
-
-    if (!isValidEmail(sanitizedData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      return false;
-    }
-
-    if (!isValidPhone(sanitizedData.phone)) {
-      toast({
-        title: "Invalid Phone",
-        description: "Please enter a valid phone number.",
-        variant: "destructive"
-      });
-      return false;
-    }
-
-    if (!sanitizedData.subject) {
-      toast({
-        title: "Subject Required",
-        description: "Please select a subject for your message.",
-        variant: "destructive"
-      });
-      return false;
-    }
-
-    if (!sanitizedData.message || sanitizedData.message.length < 10 || sanitizedData.message.length > 1000) {
-      toast({
-        title: "Invalid Message",
-        description: "Message must be between 10 and 1000 characters.",
-        variant: "destructive"
-      });
-      return false;
-    }
-
-    return true;
-  };
-
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    const sanitizedValue = sanitizeInput(value);
-    setFormData(prev => ({ ...prev, [name]: sanitizedValue }));
-  }, []);
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Rate limiting check
-    const now = Date.now();
-    if (now - lastSubmissionTime < RATE_LIMIT_MS) {
-      toast({
-        title: "Please Wait",
-        description: "Please wait 30 seconds between submissions.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-    setLastSubmissionTime(now);
-
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Sanitized form submitted:', {
-        name: sanitizeInput(formData.name),
-        email: sanitizeInput(formData.email),
-        phone: sanitizeInput(formData.phone),
-        subject: sanitizeInput(formData.subject),
-        message: sanitizeInput(formData.message)
-      });
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-      });
-      
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  }, [formData, lastSubmissionTime, toast]);
-
-  const handleNewsletterSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    const sanitizedEmail = sanitizeInput(newsletterEmail);
-    
-    if (!isValidEmail(sanitizedEmail)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    console.log('Newsletter signup:', sanitizedEmail);
+    console.log('Form submitted:', formData);
     toast({
-      title: "Subscribed!",
-      description: "Thank you for subscribing to our farm newsletter.",
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
-    setNewsletterEmail('');
-  }, [newsletterEmail, toast]);
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail) {
+      console.log('Newsletter signup:', newsletterEmail);
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for subscribing to our farm newsletter.",
+      });
+      setNewsletterEmail('');
+    }
+  };
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -242,7 +119,6 @@ const ContactSection = () => {
                     className="flex-1"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    maxLength={254}
                     required
                   />
                   <Button type="submit" className="bg-farm-green-600 hover:bg-farm-green-700">
@@ -277,8 +153,6 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="Your full name"
                       className="w-full"
-                      maxLength={50}
-                      minLength={2}
                     />
                   </div>
                   <div>
@@ -294,7 +168,6 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="your@email.com"
                       className="w-full"
-                      maxLength={254}
                     />
                   </div>
                 </div>
@@ -312,7 +185,6 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="(519) 621-9409"
                       className="w-full"
-                      maxLength={15}
                     />
                   </div>
                   <div>
@@ -350,17 +222,14 @@ const ContactSection = () => {
                     placeholder="Tell us how we can help you..."
                     rows={5}
                     className="w-full h-full"
-                    maxLength={1000}
-                    minLength={10}
                   />
                 </div>
 
                 <Button 
                   type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group mt-auto disabled:opacity-50"
+                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3 text-lg font-medium group mt-auto"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  Send Message
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
