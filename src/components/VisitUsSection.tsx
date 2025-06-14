@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -99,18 +98,6 @@ const VisitUsSection = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Barrie's Asparagus Farm Location"
                   ></iframe>
-                  <div className="absolute bottom-2 right-2">
-                    <Button 
-                      size="sm" 
-                      className="bg-white/90 text-farm-brown-800 hover:bg-white text-xs"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openGoogleMaps();
-                      }}
-                    >
-                      View larger map
-                    </Button>
-                  </div>
                 </div>
                 
                 <div className="space-y-3 text-farm-brown-700">
