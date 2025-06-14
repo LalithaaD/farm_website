@@ -10,10 +10,10 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Farm info */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-farm-cream-100">
+              <h3 className="text-xl font-bold text-farm-cream-100 -mt-2">
                 Barrie's Asparagus Farm
               </h3>
-              <p className="text-farm-cream-200 text-sm leading-relaxed">
+              <p className="text-farm-cream-200 text-sm leading-relaxed mt-6">
                 Four generations of family farming, bringing you the freshest asparagus 
                 and seasonal produce since 1892.
               </p>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
 
             {/* Quick links */}
-            <div className="space-y-4">
+            <div className="space-y-4 mt-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#home" className="text-farm-cream-200 hover:text-white transition-colors">Home</a></li>
@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
 
             {/* Contact info */}
-            <div className="space-y-4">
+            <div className="space-y-4 mt-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Contact Info</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">
@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
 
             {/* Hours */}
-            <div className="space-y-4">
+            <div className="space-y-4 mt-4">
               <h4 className="text-lg font-semibold text-farm-cream-100">Hours</h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start">

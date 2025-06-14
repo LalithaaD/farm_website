@@ -25,12 +25,12 @@ const ContactSection = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 h-full flex flex-col">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
                 Contact Information
               </h3>
               
-              <div className="space-y-6 flex-grow">
+              <div className="space-y-6">
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-farm-green-600 mr-4 mt-1" />
                   <div>
@@ -75,12 +75,12 @@ const ContactSection = () => {
             </div>
 
             {/* Visit Planning */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 h-full flex flex-col">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
                 Plan Your Visit
               </h3>
               
-              <div className="space-y-6 flex-grow">
+              <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-farm-green-600 mb-3">What to Expect</h4>
                   <ul className="text-farm-brown-600 space-y-2">
