@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Clock, CreditCard, Star, Car, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -87,30 +86,18 @@ const VisitUsSection = () => {
                   Location & Directions
                 </h3>
                 
-                {/* Real Google Maps embed */}
+                {/* Fixed Google Maps embed */}
                 <div className="rounded-lg overflow-hidden h-48 mb-4 relative cursor-pointer" onClick={openGoogleMaps}>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.123456789!2d-80.3144!3d43.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c7a5e8b5e5b5b%3A0x5b5b5b5b5b5b5b5b!2sBarrie's%20Asparagus%2C%201236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.4!2d-80.3144963!3d43.3616582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c77d4d4d4d4d4%3A0x4d4d4d4d4d4d4d4d!2s1236%20Kings%20Rd%2C%20Cambridge%2C%20ON%20N1R%205S3%2C%20Canada!5e0!3m2!1sen!2sca!4v1673000000000!5m2!1sen!2sca"
                     width="100%"
                     height="100%"
-                    style={{ border: 0, pointerEvents: 'none' }}
+                    style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Barrie's Asparagus Farm Location"
                   ></iframe>
-                  <div className="absolute bottom-2 right-2">
-                    <Button 
-                      size="sm" 
-                      className="bg-white/90 text-farm-brown-800 hover:bg-white text-xs"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        openGoogleMaps();
-                      }}
-                    >
-                      View larger map
-                    </Button>
-                  </div>
                 </div>
                 
                 <div className="space-y-3 text-farm-brown-700">
@@ -180,7 +167,7 @@ const VisitUsSection = () => {
                   Payment Options
                 </h3>
                 
-                <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div className="text-center p-3 bg-farm-green-50 rounded-lg">
                     <span className="text-2xl mb-2 block">💵</span>
                     <p className="text-sm font-medium">Cash</p>
@@ -195,11 +182,7 @@ const VisitUsSection = () => {
                   </div>
                 </div>
                 
-                <div className="text-sm text-farm-brown-600 space-y-1">
-                  <p>• Cash payments welcome</p>
-                  <p>• Local cheques accepted with ID</p>
-                  <p>• E-transfer to aspagarus@rogers.com</p>
-                </div>
+                
               </div>
 
               <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 flex flex-col flex-1">
