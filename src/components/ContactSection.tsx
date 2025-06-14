@@ -107,15 +107,27 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            {/* Farm Sign Image - Left Side */}
-            <div className="flex flex-col">
-              <div className="h-full flex items-center justify-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Farm Sign Image and Contact Info - Left Side */}
+            <div className="flex flex-col space-y-6">
+              <div className="flex justify-center">
                 <img 
                   src="/lovable-uploads/1bf3fb0e-bd2f-4778-9cc7-b533af88eed8.png" 
                   alt="Barrie's Asparagus Farm Sign - Welcome to Cedardale Farm"
                   className="w-full h-auto max-w-lg rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
+              </div>
+              
+              {/* Contact Information Below Image */}
+              <div className="text-center space-y-3">
+                <div className="flex items-center justify-center text-farm-brown-700">
+                  <Phone className="h-5 w-5 mr-2 text-farm-green-600" />
+                  <span className="text-lg font-medium">(519) 621-9409</span>
+                </div>
+                <div className="flex items-center justify-center text-farm-brown-700">
+                  <Mail className="h-5 w-5 mr-2 text-farm-green-600" />
+                  <span className="text-lg font-medium">aspagarus@rogers.com</span>
+                </div>
               </div>
             </div>
 
