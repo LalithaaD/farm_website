@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, User, MessageSquare, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { useNewsletterSignup } from '@/hooks/useNewsletterSignup';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +17,7 @@ const ContactSection = () => {
   });
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const { toast } = useToast();
+  const { signupForNewsletter, isLoading } = useNewsletterSignup();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -33,14 +34,12 @@ const ContactSection = () => {
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newsletterEmail) {
-      console.log('Newsletter signup:', newsletterEmail);
-      toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to our farm newsletter.",
-      });
+    if (!newsletterEmail) return;
+    
+    const success = await signupForNewsletter(newsletterEmail);
+    if (success) {
       setNewsletterEmail('');
     }
   };
@@ -91,12 +90,14 @@ const ContactSection = () => {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     required
+                    disabled={isLoading}
                   />
                   <Button 
                     type="submit" 
                     className="bg-farm-green-600 hover:bg-farm-green-700 h-12 px-8 text-base font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    disabled={isLoading}
                   >
-                    Subscribe
+                    {isLoading ? 'Subscribing...' : 'Subscribe'}
                     <Sparkles className="ml-2 h-4 w-4" />
                   </Button>
                 </form>

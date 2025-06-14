@@ -1,10 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, ArrowDown } from 'lucide-react';
+import { X, ArrowDown, Mail } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { useNewsletterSignup } from '@/hooks/useNewsletterSignup';
 
 const NewsletterSuggestion = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [email, setEmail] = useState('');
+  const { signupForNewsletter, isLoading } = useNewsletterSignup();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +36,21 @@ const NewsletterSuggestion = () => {
       });
     }
     setIsVisible(false);
+  };
+
+  const handleQuickSignup = () => {
+    setShowForm(true);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    const success = await signupForNewsletter(email);
+    if (success) {
+      setEmail('');
+      setIsVisible(false);
+    }
   };
 
   const closeSuggestion = () => {
@@ -61,13 +82,43 @@ const NewsletterSuggestion = () => {
               🥕 Love local? Get the latest on our harvests and handmade goodies!
             </p>
             
-            <button
-              onClick={scrollToNewsletter}
-              className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white font-serif font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-            >
-              Take Me There
-              <ArrowDown className="h-4 w-4" />
-            </button>
+            {!showForm ? (
+              <div className="space-y-2">
+                <button
+                  onClick={handleQuickSignup}
+                  className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white font-serif font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                >
+                  Quick Signup
+                  <Mail className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={scrollToNewsletter}
+                  className="w-full bg-white hover:bg-farm-green-50 text-farm-green-600 font-serif font-semibold py-2 px-4 rounded-lg transition-all duration-300 border border-farm-green-200 flex items-center justify-center gap-2"
+                >
+                  Take Me There
+                  <ArrowDown className="h-4 w-4" />
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <Input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="text-sm"
+                  required
+                  disabled={isLoading}
+                />
+                <Button
+                  type="submit"
+                  className="w-full bg-farm-green-600 hover:bg-farm-green-700"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>
@@ -93,13 +144,43 @@ const NewsletterSuggestion = () => {
               🥕 Love local? Get the latest on our harvests and handmade goodies!
             </p>
             
-            <button
-              onClick={scrollToNewsletter}
-              className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white font-serif font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-            >
-              Take Me There
-              <ArrowDown className="h-4 w-4" />
-            </button>
+            {!showForm ? (
+              <div className="flex gap-2">
+                <button
+                  onClick={handleQuickSignup}
+                  className="flex-1 bg-farm-green-600 hover:bg-farm-green-700 text-white font-serif font-semibold py-2 px-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm"
+                >
+                  Quick Signup
+                  <Mail className="h-3 w-3" />
+                </button>
+                <button
+                  onClick={scrollToNewsletter}
+                  className="flex-1 bg-white hover:bg-farm-green-50 text-farm-green-600 font-serif font-semibold py-2 px-3 rounded-lg transition-all duration-300 border border-farm-green-200 flex items-center justify-center gap-2 text-sm"
+                >
+                  Take Me There
+                  <ArrowDown className="h-3 w-3" />
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="text-sm flex-1"
+                  required
+                  disabled={isLoading}
+                />
+                <Button
+                  type="submit"
+                  className="bg-farm-green-600 hover:bg-farm-green-700 px-4"
+                  disabled={isLoading}
+                >
+                  {isLoading ? '...' : 'Subscribe'}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>
