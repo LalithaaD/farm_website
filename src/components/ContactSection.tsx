@@ -23,9 +23,9 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             {/* Contact Information */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 h-full">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
                 Contact Information
               </h3>
@@ -74,48 +74,59 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Visit Planning */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8">
+            {/* Newsletter Subscription */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 h-full">
               <h3 className="text-2xl font-bold text-farm-brown-800 mb-6">
-                Plan Your Visit
+                Stay Updated
               </h3>
               
               <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-farm-green-600 mb-3">What to Expect</h4>
-                  <ul className="text-farm-brown-600 space-y-2">
-                    <li>• Fresh asparagus picking (seasonal)</li>
-                    <li>• Country market with local produce</li>
-                    <li>• Homemade preserves and artisanal goods</li>
-                    <li>• Farm tours on weekends</li>
-                    <li>• Family-friendly environment</li>
-                  </ul>
-                </div>
+                <p className="text-farm-brown-600">
+                  Subscribe to our newsletter to get updates about harvest seasons, 
+                  special events, and fresh produce availability.
+                </p>
                 
-                <div>
-                  <h4 className="font-semibold text-farm-green-600 mb-3">Best Times to Visit</h4>
-                  <ul className="text-farm-brown-600 space-y-2">
-                    <li>• <strong>Peak Season:</strong> April - June for fresh asparagus</li>
-                    <li>• <strong>Morning:</strong> Best selection of fresh produce</li>
-                    <li>• <strong>Weekends:</strong> Farm tours available</li>
-                  </ul>
-                </div>
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="Enter your email"
+                      className="w-full px-4 py-3 border border-farm-brown-200 rounded-lg focus:ring-2 focus:ring-farm-green-500 focus:border-transparent outline-none"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-farm-brown-700 mb-2">
+                      Name (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Enter your name"
+                      className="w-full px-4 py-3 border border-farm-brown-200 rounded-lg focus:ring-2 focus:ring-farm-green-500 focus:border-transparent outline-none"
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    className="w-full bg-farm-green-600 hover:bg-farm-green-700 text-white py-3"
+                  >
+                    Subscribe to Newsletter
+                  </Button>
+                </form>
                 
-                <div>
-                  <h4 className="font-semibold text-farm-green-600 mb-3">Payment Methods</h4>
-                  <p className="text-farm-brown-600">
-                    We accept cash, local cheques with ID, and e-transfer to aspagarus@rogers.com
-                  </p>
+                <div className="mt-6 pt-6 border-t border-farm-brown-200">
+                  <Button 
+                    className="w-full bg-farm-brown-600 hover:bg-farm-brown-700 text-white"
+                    onClick={scrollToTop}
+                  >
+                    Back to Top
+                  </Button>
                 </div>
-              </div>
-              
-              <div className="mt-6">
-                <Button 
-                  className="w-full bg-farm-green-600 hover:bg-farm-green-700"
-                  onClick={scrollToTop}
-                >
-                  Back to Top
-                </Button>
               </div>
             </div>
           </div>
