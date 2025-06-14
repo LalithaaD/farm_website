@@ -82,21 +82,21 @@ const Reviews = () => {
       name: "Karen P.",
       rating: 5,
       text: "The strawberry preserves are heavenly! I buy them by the case every year.",
-      date: "2 months ago",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=50&h=50&fit=crop&crop=face"
+      date: "2 years ago",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Steve R.",
       rating: 5,
       text: "Great place to bring the family. The kids love the farm animals and fresh produce is top-notch.",
-      date: "3 months ago",
+      date: "1 year ago",
       image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Nicole A.",
       rating: 5,
       text: "Supporting local farmers has never been easier! Quality and service are exceptional.",
-      date: "4 months ago",
+      date: "3 years ago",
       image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=50&h=50&fit=crop&crop=face"
     },
     {
@@ -111,97 +111,111 @@ const Reviews = () => {
       rating: 5,
       text: "Love the seasonal approach to farming. Everything is picked at peak ripeness!",
       date: "6 months ago",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=50&h=50&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332c108?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Chris M.",
       rating: 5,
       text: "Fourth generation of excellence! You can taste the tradition in every bite.",
-      date: "8 months ago",
+      date: "1 year ago",
       image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Rachel D.",
       rating: 5,
       text: "The farm tour was incredible! Learning about asparagus cultivation was fascinating.",
-      date: "10 months ago",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
+      date: "5 years ago",
+      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Mark T.",
       rating: 5,
       text: "Been a customer for 15 years. Consistency and quality never wavers!",
-      date: "1 year ago",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+      date: "8 years ago",
+      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Janet W.",
       rating: 5,
       text: "The homemade preserves are worth the trip alone. Strawberry jam is divine!",
-      date: "1 year ago",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c108?w=50&h=50&fit=crop&crop=face"
+      date: "2 years ago",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Paul F.",
       rating: 5,
       text: "Great educational experience for the kids. They now understand where food comes from!",
-      date: "1 year ago",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+      date: "4 years ago",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Linda G.",
       rating: 5,
       text: "The asparagus season is the highlight of my year! Always fresh and delicious.",
-      date: "14 months ago",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50&h=50&fit=crop&crop=face"
+      date: "6 months ago",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Kevin H.",
       rating: 5,
       text: "Supporting local agriculture feels good, and the quality is unmatched!",
-      date: "16 months ago",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face"
+      date: "3 years ago",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Michelle B.",
       rating: 5,
       text: "The farm store has everything you need for healthy eating. Love shopping here!",
-      date: "18 months ago",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&h=50&fit=crop&crop=face"
+      date: "7 months ago",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332c108?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Gary S.",
       rating: 5,
       text: "Best asparagus in Ontario! The family's passion for farming really shows.",
-      date: "20 months ago",
-      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=50&h=50&fit=crop&crop=face"
+      date: "1 year ago",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Susan J.",
       rating: 5,
       text: "The seasonal produce is always perfectly ripe. You can't get this quality at grocery stores!",
-      date: "22 months ago",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=50&h=50&fit=crop&crop=face"
+      date: "2 years ago",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Richard P.",
       rating: 5,
       text: "Farm-to-table at its finest! The asparagus is incredibly fresh and flavorful.",
-      date: "2 years ago",
-      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=50&h=50&fit=crop&crop=face"
+      date: "9 months ago",
+      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Carol M.",
       rating: 5,
       text: "Love the family atmosphere and commitment to sustainable farming practices.",
-      date: "2 years ago",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=50&h=50&fit=crop&crop=face"
+      date: "4 years ago",
+      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=50&h=50&fit=crop&crop=face"
     },
     {
       name: "Daniel K.",
       rating: 5,
       text: "The farm tours are educational and fun. Great way to spend a weekend afternoon!",
-      date: "2 years ago",
+      date: "6 years ago",
+      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=50&h=50&fit=crop&crop=face"
+    },
+    {
+      name: "Betty L.",
+      rating: 5,
+      text: "Four generations of farming excellence! The tradition continues with amazing quality.",
+      date: "10 years ago",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=50&h=50&fit=crop&crop=face"
+    },
+    {
+      name: "George W.",
+      rating: 5,
+      text: "The asparagus is so tender and flavorful. This is what real farm-fresh tastes like!",
+      date: "5 years ago",
       image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=50&h=50&fit=crop&crop=face"
     }
   ];
@@ -239,7 +253,7 @@ const Reviews = () => {
               </div>
               <span className="ml-3 text-3xl font-bold text-farm-brown-800">4.9/5</span>
             </div>
-            <p className="text-xl text-farm-brown-600">Based on 28 customer reviews</p>
+            <p className="text-xl text-farm-brown-600">Based on 30 customer reviews</p>
           </div>
 
           {/* Reviews Grid */}
